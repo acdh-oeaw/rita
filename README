@@ -1,9 +1,8 @@
-Reading in the Alps
----
+h1. Reading in the Alps
 
 This is the reposity of the Project 'Reading in the Alps', a digital editions project about inventories collected, sighted, transcribed and described by Michal Span (University of Innsbruck). 
 
-The repository contains
+h2. The repository contains
  
 * the original data (.docx and .xlsx files) provided by Michael Span,
 * (python) scripts and (xsl) stylesheets to process the .docx files to XML/TEI files
