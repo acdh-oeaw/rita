@@ -234,6 +234,14 @@
                     <xsl:apply-templates/>
                 </xsl:element>
             </xsl:when>
+            <xsl:when test="@rend='strikethrough'">
+                <xsl:element name="dell">
+                    <xsl:apply-templates/>
+                </xsl:element>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:apply-templates/>
+            </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
     
