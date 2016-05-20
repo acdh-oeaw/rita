@@ -235,7 +235,7 @@
                 </xsl:element>
             </xsl:when>
             <xsl:when test="@rend='strikethrough'">
-                <xsl:element name="dell">
+                <xsl:element name="del">
                     <xsl:apply-templates/>
                 </xsl:element>
             </xsl:when>

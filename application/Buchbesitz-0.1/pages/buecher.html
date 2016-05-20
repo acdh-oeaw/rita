@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div class="templates:surround?with=templates/page.html&amp;at=content">
+    <script src="$shared/resources/scripts/tablesorter/js/jquery.tablesorter.js"/>
+    <script src="$shared/resources/scripts/tablesorter/js/jquery.tablesorter.widgets.js"/><!--pager plugin-->
+    <script src="$shared/resources/scripts/tablesorter/js/jquery.tablesorter.pager.js"/>
+    <script> $(function() { $("table").tablesorter({ theme : "bootstrap", widthFixed: false,
+        headerTemplate : '{content} {icon}', widgets : [ "uitheme", "filter", "zebra" ], filter_cssFilter: "form-control", }) }); 
+    </script>
+    <h2>
+        <span data-template="app:number-of-books"/> Bücher, erwähnt in <span data-template="app:number-of-inventories"/> Inventaren</h2>
+    <table class="table table-striped table-condensed table-hover">
+        <thead>
+            <tr align="center">
+                <th>
+                    Buch
+                </th>
+                <th>
+                    Preis
+                </th>
+                <th>
+                    Inventar
+                </th>
+            </tr>
+        </thead>
+        <tr data-template="app:list-all-books"/>
+    </table>
+</div>
