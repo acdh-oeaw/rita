@@ -19,7 +19,12 @@ else if (ends-with($exist:path, "/inhalt")) then
         </view>
         <forward url="pages/inhalt.html"/>
     </dispatch>
-
+    
+else if (contains($exist:path,"$app-root-href")) then
+    (: forward root path to index.xql :)
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <redirect url="/exist/apps/{$exist:controller}{substring-after($exist:path, "$app-root-href")}"/>
+    </dispatch>
 
 else if (ends-with(concat($exist:path,"/show/", $exist:resource), ".xml")) then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
@@ -28,9 +33,6 @@ else if (ends-with(concat($exist:path,"/show/", $exist:resource), ".xml")) then
             <forward url="{$exist:controller}/modules/view.xql"/>
         </view>
     </dispatch>
-
-
-
 
 else if (ends-with($exist:resource, ".html")) then
     (: the html page is run through view.xql to expand templates :)
@@ -43,6 +45,7 @@ else if (ends-with($exist:resource, ".html")) then
 			<forward url="{$exist:controller}/modules/view.xql"/>
 		</error-handler>
     </dispatch>
+    
 (: Resource paths starting with $shared are loaded from the shared-resources app :)
 else if (contains($exist:path, "/$shared/")) then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">

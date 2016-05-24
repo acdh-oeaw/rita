@@ -1305,7 +1305,7 @@
                 <row>
                     <cell n="1">TLA_Aktenserie_LG_Mieders_Fasz_8_Pos_5</cell>
                     <cell n="2">14</cell>
-                    <cell n="3">FEHLT</cell>
+                    <cell n="3">fehlt</cell>
                     <cell n="4"/>
                     <cell n="5"/>
                     <cell n="6"/>
@@ -2225,7 +2225,7 @@
                 <row>
                     <cell n="1">TLA_Aktenserie_LG_Mieders_Fasz_7_Pos_6</cell>
                     <cell n="2">5</cell>
-                    <cell n="3">FEHLT!</cell>
+                    <cell n="3">fehlt!</cell>
                     <cell n="4"/>
                     <cell n="5"/>
                     <cell n="6"/>
@@ -2945,9 +2945,6 @@
                     <cell n="9"/>
                     <cell n="10"/>
                     <cell n="11"/>
-                </row>
-                <row>
-                    <cell n="1"/>
                 </row>
             </table>
         </body>

@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div class="templates:surround?with=templates/page.html&amp;at=content">
     <script src="$shared/resources/scripts/tablesorter/js/jquery.tablesorter.js"/>
-    <script src="$shared/resources/scripts/tablesorter/js/jquery.tablesorter.widgets.js"/><!--pager plugin-->
+    <script src="$shared/resources/scripts/tablesorter/js/jquery.tablesorter.widgets.js"/>
     <script src="$shared/resources/scripts/tablesorter/js/jquery.tablesorter.pager.js"/>
+    <link rel="stylesheet" type="text/css" href="$shared/resources/scripts/tablesorter/css/theme.bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="$shared/resources/scripts/tablesorter/css/jquery.tablesorter.pager.css"/>
     <script> $(function() { $("table").tablesorter({ theme : "bootstrap", widthFixed: false,
         headerTemplate : '{content} {icon}', widgets : [ "uitheme", "filter", "zebra" ], filter_cssFilter: "form-control", }) }); 
     </script>
-    <h2>
-        <span data-template="app:number-of-books"/> Bücher, erwähnt in <span data-template="app:number-of-inventories"/> Inventaren</h2>
+    <div class="page-header">
+        <h2 align="center">
+            <span data-template="app:number-of-books"/> Erwähnungen von Büchern in insgesamt <span data-template="app:number-of-all-inventories"/> Inventaren.
+            </h2>
+    </div>
     <table class="table table-striped table-condensed table-hover">
         <thead>
             <tr align="center">
                 <th>
                     Buch
-                </th>
-                <th>
-                    Preis
                 </th>
                 <th>
                     Inventar

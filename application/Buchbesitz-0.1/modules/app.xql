@@ -46,16 +46,13 @@ let $params :=
 };
 
 declare function app:list-all-books ($node as node(), $model as map (*), $query as xs:string?) {
-for $bookrow in collection('/db/apps/buchbesitz-collection/xml')//tei:row[tei:cell/tei:bibl]
+for $bookrow in collection('/db/apps/buchbesitz-collection/xml')//tei:bibl[string-length(./text()) gt 8]
 let $doc := document-uri(root($bookrow))
 let $id := data($bookrow/ancestor::tei:TEI/@xml:id)
-let $book := $bookrow/tei:cell[1]/tei:bibl/text()
-let $price := $bookrow/tei:cell[2]/tei:bibl/text()
 order by $doc
 return
     <tr>
-        <td>{$book}</td>
-        <td>à {$price}</td>
+        <td>{$bookrow}</td>
         <td><a href="{concat($app:pathToShow, $id)}">{$id}</a></td>
     </tr>
 };
@@ -74,8 +71,9 @@ return
 };
 
 declare function app:number-of-all-inventories ($node as node(), $model as map (*), $query as xs:string?) {
-let $rows := count(doc(concat($app:xmlCollection, 'other/summary.xml'))//tei:row[position() gt 1])
-return $rows
+let $allrows: = count(doc(concat($app:xmlCollection, 'other/summary.xml'))//tei:row[position() gt 1])
+let $rows := count(doc(concat($app:xmlCollection, 'other/summary.xml'))//tei:row[position() gt 1 and contains(./tei:cell[3],'fehlt')])
+return $allrows - $rows
 };
 
 declare function app:summary ($node as node(), $model as map (*), $query as xs:string?) {
