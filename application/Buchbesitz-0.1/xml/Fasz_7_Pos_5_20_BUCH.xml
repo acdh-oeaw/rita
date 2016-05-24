@@ -778,7 +778,9 @@
                     <table rend="rules">
                         <row>
                             <cell>
-                                <bibl>ain Leben Christi, Evangel, und 2 schlechte Bettbiechlen</bibl>
+                                <bibl>
+                                    <rs type="bibliography" ref="#cochem__leben_christi">ain Leben Christi</rs>
+                                </bibl>, <bibl>Evangel</bibl>, und <bibl>2 schlechte Bettbiechlen</bibl>
                             </cell>
                             <cell>
                                 <bibl>48 x</bibl>

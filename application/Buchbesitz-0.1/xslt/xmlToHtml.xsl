@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tei="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="tei" version="2.0"><!-- <xsl:strip-space elements="*"/>-->
-    <xsl:param name="ref"/><!--
+    <xsl:param name="ref"/>
+<!--
 ##################################
 ### Seitenlayout und -struktur ###
 ##################################
@@ -64,7 +65,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div class="panel-footer">
+                    <!--<div class="panel-footer">
                         <xsl:element name="p">
                             <xsl:attribute name="style">
                                 <xsl:text>text-align:center;</xsl:text>
@@ -77,7 +78,7 @@
                                 <xsl:value-of select="concat('http://digital-archiv.at:8081/exist/apps/buchbesitz-collection/show/', //tei:TEI/@xml:id)"/>
                             </xsl:element>
                         </xsl:element>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
@@ -122,18 +123,102 @@
                         </p>
                     </div>
                 </div>
+                <hr/>
+                <div>
+                    <!-- Fußnotenapparat -->
+                    <xsl:for-each select="tei:TEI/tei:text/tei:body//tei:note">
+                        <div class="footnotes">
+                            <xsl:element name="a">
+                                <xsl:attribute name="name">
+                                    <xsl:text>fn</xsl:text>
+                                    <xsl:number level="any" format="1" count="tei:note"/>
+                                </xsl:attribute>
+                                <a>
+                                    <xsl:attribute name="href">
+                                        <xsl:text>#fna_</xsl:text>
+                                        <xsl:number level="any" format="1" count="tei:note"/>
+                                    </xsl:attribute>
+                                    <span style="font-size:7pt;vertical-align:super;">
+                                        <xsl:number level="any" format="1" count="tei:note"/>
+                                    </span>
+                                </a>
+                            </xsl:element>
+                            <xsl:apply-templates/>
+                        </div>
+                    </xsl:for-each>
+                </div>
             </div>
         </div>
-    </xsl:template><!--
+    </xsl:template>
+<!--
     #####################
     ###  Formatierung ###
     #####################
---><!-- Bücher -->
+-->
+
+<!-- Fußnotenanzeiger im Text -->
+    <xsl:template match="tei:note">
+        <xsl:element name="a">
+            <xsl:attribute name="name">
+                <xsl:text>fna_</xsl:text>
+                <xsl:number level="any" format="1" count="tei:note"/>
+            </xsl:attribute>
+            <xsl:attribute name="href">
+                <xsl:text>#fn</xsl:text>
+                <xsl:number level="any" format="1" count="tei:note"/>
+            </xsl:attribute>
+            <xsl:attribute name="title">
+                <xsl:value-of select="normalize-space(.)"/>
+            </xsl:attribute>
+            <span style="font-size:7pt;vertical-align:super;">
+                <xsl:number level="any" format="1" count="tei:note"/>
+            </span>
+        </xsl:element>
+    </xsl:template>
+    
+<!-- additions -->
+    <xsl:template match="tei:add">
+        <xsl:element name="span">
+            <xsl:attribute name="style">
+                <xsl:text>color:blue;</xsl:text>
+            </xsl:attribute>
+            <xsl:attribute name="title">
+                <xsl:choose>
+                    <xsl:when test="@place='margin'">
+                        <xsl:text>zeitgenössische Ergänzung am Rand </xsl:text>(<xsl:value-of select="./@place"/>).
+                    </xsl:when>
+                    <xsl:when test="@place='above'">
+                        <xsl:text>zeitgenössische Ergänzung oberhalb </xsl:text>(<xsl:value-of select="./@place"/>)
+                    </xsl:when>
+                    <xsl:when test="@place='below'">
+                        <xsl:text>zeitgenössische Ergänzung unterhalb </xsl:text>(<xsl:value-of select="./@place"/>)
+                    </xsl:when>
+                    <xsl:when test="@place='inline'">
+                        <xsl:text>zeitgenössische Ergänzung in der gleichen Zeile </xsl:text>(<xsl:value-of select="./@place"/>)
+                    </xsl:when>
+                    <xsl:when test="@place='top'">
+                        <xsl:text>zeitgenössische Ergänzung am oberen Blattrand </xsl:text>(<xsl:value-of select="./@place"/>)
+                    </xsl:when>
+                    <xsl:when test="@place='bottom'">
+                        <xsl:text>zeitgenössische Ergänzung am unteren Blattrand </xsl:text>(<xsl:value-of select="./@place"/>)
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text>zeitgenössische Ergänzung am unteren Blattrand </xsl:text>(<xsl:value-of select="./@place"/>)
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:attribute>
+            <xsl:text> </xsl:text>
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+    
+<!-- Bücher -->
     <xsl:template match="tei:bibl">
         <xsl:element name="strong">
             <xsl:apply-templates/>
         </xsl:element>
-    </xsl:template><!-- Seitenzahlen -->
+    </xsl:template>
+<!-- Seitenzahlen -->
     <xsl:template match="tei:pb">
         <xsl:element name="div">
             <xsl:attribute name="style">
@@ -144,7 +229,8 @@
             <xsl:text>]</xsl:text>
         </xsl:element>
         <xsl:element name="hr"/>
-    </xsl:template><!-- Tabellen -->
+    </xsl:template>
+<!-- Tabellen -->
     <xsl:template match="tei:table">
         <xsl:element name="table">
             <xsl:attribute name="class">
@@ -164,7 +250,8 @@
         <xsl:element name="td">
             <xsl:apply-templates/>
         </xsl:element>
-    </xsl:template><!-- Überschriften -->
+    </xsl:template>
+ <!-- Überschriften -->
     <xsl:template match="tei:head">
         <xsl:element name="h3">
             <xsl:element name="a">
@@ -179,20 +266,24 @@
                 <xsl:apply-templates/>
             </xsl:element>
         </xsl:element>
-    </xsl:template><!--  Quotes / Zitate -->
+    </xsl:template>
+<!--  Quotes / Zitate -->
     <xsl:template match="tei:q">
         <xsl:element name="i">
             <xsl:apply-templates/>
         </xsl:element>
-    </xsl:template><!-- Zeilenumbürche   -->
+    </xsl:template>
+<!-- Zeilenumbürche   -->
     <xsl:template match="tei:lb">
         <br/>
-    </xsl:template><!-- Absätze    -->
+    </xsl:template>
+<!-- Absätze    -->
     <xsl:template match="tei:p">
         <xsl:element name="p">
             <xsl:apply-templates/>
         </xsl:element>
-    </xsl:template><!-- Durchstreichungen -->
+    </xsl:template>
+<!-- Durchstreichungen -->
     <xsl:template match="tei:del">
         <xsl:element name="strike">
             <xsl:apply-templates/>

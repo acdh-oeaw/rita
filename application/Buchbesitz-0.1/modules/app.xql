@@ -49,11 +49,16 @@ declare function app:list-all-books ($node as node(), $model as map (*), $query 
 for $bookrow in collection('/db/apps/buchbesitz-collection/xml')//tei:bibl[string-length(./text()) gt 8]
 let $doc := document-uri(root($bookrow))
 let $id := data($bookrow/ancestor::tei:TEI/@xml:id)
+let $header := $bookrow/ancestor::tei:TEI//tei:teiHeader
+let $idno := $header//tei:msIdentifier//tei:idno
+let $bestand := $header//tei:msIdentifier//tei:collection
+
 order by $doc
 return
     <tr>
         <td>{$bookrow}</td>
-        <td><a href="{concat($app:pathToShow, $id)}">{$id}</a></td>
+        <td>
+            <a href="{concat($app:pathToShow, $id)}">{for $x in $bestand return concat($x, " ")}{$idno}</a></td>
     </tr>
 };
 
@@ -73,7 +78,7 @@ return
 declare function app:number-of-all-inventories ($node as node(), $model as map (*), $query as xs:string?) {
 let $allrows: = count(doc(concat($app:xmlCollection, 'other/summary.xml'))//tei:row[position() gt 1])
 let $rows := count(doc(concat($app:xmlCollection, 'other/summary.xml'))//tei:row[position() gt 1 and contains(./tei:cell[3],'fehlt')])
-return $allrows - $rows
+return $allrows - $rows - 1
 };
 
 declare function app:summary ($node as node(), $model as map (*), $query as xs:string?) {
