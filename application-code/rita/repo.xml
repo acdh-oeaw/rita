@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<meta xmlns="http://exist-db.org/xquery/repo">
+    <description>Reading in the Alps is a digital edition</description>
+    <author>Peter Andorfer</author>
+    <website/>
+    <status>alpha</status>
+    <license>GNU-LGPL</license>
+    <copyright>true</copyright>
+    <type>application</type>
+    <target>rita</target>
+    <prepare>pre-install.xql</prepare>
+    <finish/>
+    <permissions user="admin" group="dba" mode="rw-rw-r--"/>
+    <deployed>2016-09-01T14:44:37.041+02:00</deployed>
+</meta>
