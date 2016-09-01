@@ -105,8 +105,21 @@ declare function app:listPers($node as node(), $model as map(*)) {
  :)
 declare function app:toc($node as node(), $model as map(*)) {
     for $doc in collection(concat($config:app-root, '/data/editions/'))//tei:TEI
+    let $dokumenttyp := $doc//tei:msContents/tei:p[1]
+    let $time := data($doc//tei:history//tei:date/@when-iso)
+    let $place := $doc//tei:history//tei:origPlace
+    let $deadperson := $doc//tei:rs[@type='person'][1]
+    
         return
-        <li><a href="{concat(replace(concat($config:app-root, '/pages/'), '/db/', '/exist/'),app:hrefToDoc($doc))}">{app:getDocName($doc)}</a></li>   
+        <tr>
+            <td>
+                <a href="{app:hrefToDoc($doc)}">{app:getDocName($doc)}</a>
+            </td>
+            <td>{$dokumenttyp}</td>
+            <td>{$time}</td>
+            <td>{$place}</td>
+            <td>{$deadperson}</td>
+        </tr>   
 };
 
 (:~
@@ -127,4 +140,11 @@ let $params :=
 </parameters>
 return 
     transform:transform($xml, $xsl, $params)
+};
+
+declare function app:number-of-inventories ($node as node(), $model as map (*), $query as xs:string?) {
+let $all := collection(concat($config:app-root, '/data/editions/'))//tei:TEI
+let $inventories := count($all)-count(collection('/db/apps/buchbesitz-collection/xml/other'))
+return 
+   $inventories
 };
