@@ -1,7 +1,6 @@
 xquery version "3.0";
 declare namespace functx = "http://www.functx.com";
 import module namespace xmldb="http://exist-db.org/xquery/xmldb";
-import module namespace config="http://www.digital-archiv.at/ns/rita/config" at "../modules/config.xqm";
 declare namespace tei = "http://www.tei-c.org/ns/1.0";
 
 
@@ -27,9 +26,10 @@ declare function local:slugify_refs( $arg as xs:string)  as xs:string {
    return $arg
  } ;
 
+declare function local:createIndex($type as xs:string, $filename as xs:string) as xs:string {
 let $indexFile := 
     <listPerson>{
-        for $doc in collection('/db/apps/rita/data/editions/')//tei:rs[@type="person"]
+        for $doc in collection('/db/apps/rita/data/editions/')//tei:rs[@type=$type]
         let $id := local:slugify_refs(data($doc/@ref))
         return 
            <person xml:id="{$id}">
@@ -38,6 +38,11 @@ let $indexFile :=
     }</listPerson>
 
 let $newIndex := <listPerson>{functx:distinct-deep($indexFile//person)}</listPerson>
-let $store := xmldb:store('/db/apps/rita/data/indices/', 'xcv.xml', $newIndex)
+let $store := xmldb:store('/db/apps/rita/data/indices/', $filename, $newIndex)
 return 
     $store
+};
+
+let $indexFile := local:createIndex("person", "persList.xml")
+return 
+    $indexFile
