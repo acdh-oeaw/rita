@@ -3,18 +3,18 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Verlassenschaftsabhandlung („Inventarium und Haushaltungs Vertrag“) von <rs type="person" ref="#hilber_christian">Christian Hilber</rs> aus <rs type="place" ref="#mieders">Mieders</rs>, erstellt <date when-iso="1754-01-21">1754-01-21</date>
+                <title>Verlassenschaftsabhandlung („Inventarium und Haushaltungs Vertrag“) von <rs type="person" ref="#hilber-christian">Christian Hilber</rs> aus <rs type="place" ref="#mieders">Mieders</rs>, erstellt <date when-iso="1754-01-21">1754-01-21</date>
                 </title>
                 <respStmt>
                     <resp>Transkribiert von</resp>
                     <name>
-                        <rs type="person" ref="#span_michael">Michael Span</rs>
+                        <rs type="person" ref="#span-michael">Michael Span</rs>
                     </name>
                 </respStmt>
                 <respStmt>
                     <resp>XML kodiert von</resp>
                     <name>
-                        <rs type="person" ref="#andorfer_peter">Peter Andorfer</rs>
+                        <rs type="person" ref="#andorfer-peter">Peter Andorfer</rs>
                     </name>
                 </respStmt>
                 <funder>
