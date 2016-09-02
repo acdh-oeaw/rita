@@ -30,7 +30,7 @@
                                 </th>
                                 <td>
                                     <xsl:for-each select="//tei:fileDesc/tei:titleStmt/tei:title">
-                                        <xsl:value-of select="."/>
+                                        <xsl:apply-templates/>
                                         <br/>
                                     </xsl:for-each>
                                 </td>
@@ -41,7 +41,15 @@
                                         <abbr title="//tei:msIdentifie">Identifier</abbr>
                                     </th>
                                     <td>
-                                        <xsl:apply-templates select="//tei:msIdentifier"/>
+                                        <xsl:for-each select="//tei:msIdentifier/child::*">
+                                            <abbr>
+                                                <xsl:attribute name="title">
+                                                    <xsl:value-of select="name()"/>
+                                                </xsl:attribute>
+                                                <xsl:apply-templates select="."/>
+                                            </abbr>
+                                            <br/>
+                                        </xsl:for-each><!--<xsl:apply-templates select="//tei:msIdentifier"/>-->
                                     </td>
                                 </tr>
                             </xsl:if>

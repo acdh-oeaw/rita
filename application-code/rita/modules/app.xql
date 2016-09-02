@@ -25,6 +25,34 @@ declare function app:test($node as node(), $model as map(*)) {
         function was triggered by the data-template attribute <code>data-template="app:test"</code>.</p>
 };
 
+declare function app:number-of-all-inventories ($node as node(), $model as map (*), $query as xs:string?) {
+let $allrows: = count(doc(concat($config:app-root, '/data/other/summary.xml'))//tei:row[position() gt 1])
+let $rows := count(doc(concat($config:app-root, '/data/other/summary.xml'))//tei:row[position() gt 1 and contains(./tei:cell[3],'fehlt')])
+return $allrows - $rows - 1
+};
+
+declare function app:summary ($node as node(), $model as map (*), $query as xs:string?) {
+for $row in doc(concat($config:app-root, '/data/other/summary.xml'))//tei:row[position() gt 1]
+    return
+        <tr>
+            <td>
+            {if(contains($row//tei:cell[11],"j")) 
+                then <strong>{$row//tei:cell[1]}</strong> 
+                else $row//tei:cell[1]}
+            </td>
+            <td>{$row//tei:cell[2]}</td>
+            <td>{$row//tei:cell[3]}</td>
+            <td>{$row//tei:cell[4]}</td>
+            <td>{$row//tei:cell[5]}</td>
+            <td>{$row//tei:cell[6]}</td>
+            <td>{$row//tei:cell[7]}</td>
+            <td>{$row//tei:cell[8]}</td>
+            <td>{$row//tei:cell[9]}</td>
+            <td>{$row//tei:cell[10]}</td>
+            <td>{$row//tei:cell[11]}</td>
+        </tr>
+};
+
 (:~
  : grabs the text stored in the repo.xml in the repo:description element.
  :)
