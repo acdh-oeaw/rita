@@ -3,18 +3,18 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Verlassenschaftsahandlung von <rs type="person" ref="#sebastian-häpacher-happacher">Sebastian Häpacher [Happacher]</rs> aus <rs type="place" ref="#fulpmes">Fulpmes</rs>, erstellt <date when-iso="1770-08-07">1770-08-07</date>
+                <title>Verlassenschaftsahandlung von <rs type="person" ref="#Häpacher [Happacher]_Sebastian">Sebastian Häpacher [Happacher]</rs> aus <rs type="place" ref="#fulpmes">Fulpmes</rs>, erstellt <date when-iso="1770-08-07">1770-08-07</date>
                 </title>
                 <respStmt>
                     <resp>Transkribiert von</resp>
                     <name>
-                        <rs type="person" ref="#michael-span">Michael Span</rs>
+                        <rs type="person" ref="#span_michael">Michael Span</rs>
                     </name>
                 </respStmt>
                 <respStmt>
                     <resp>XML kodiert von</resp>
                     <name>
-                        <rs type="person" ref="#peter-andorfer">Peter Andorfer</rs>
+                        <rs type="person" ref="#andorfer_peter">Peter Andorfer</rs>
                     </name>
                 </respStmt>
                 <funder>

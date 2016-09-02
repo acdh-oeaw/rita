@@ -3,18 +3,18 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Inventar d. tot. u. lebend. Fahrnisse ("deren Mobilien und Leibklaider betreffend") von <rs type="person" ref="#catharina-katharina-kartnalerin-kartnallerin-ledig">Catharina [Katharina] Kartnalerin [Kartnallerin] (ledig)</rs> aus <rs type="place" ref="#milders-neustift">Milders (Neustift)</rs>, erstellt <date when-iso="1754-05-17">1754-05-17</date>
+                <title>Inventar d. tot. u. lebend. Fahrnisse ("deren Mobilien und Leibklaider betreffend") von <rs type="person" ref="#KatharinaKartnallerin">Catharina [Katharina] Kartnalerin [Kartnallerin] (ledig)</rs> aus <rs type="place" ref="#Milders (Neustift)">Milders (Neustift)</rs>, erstellt <date when-iso="1754-05-17">1754-05-17</date>
                 </title>
                 <respStmt>
                     <resp>Transkribiert von</resp>
                     <name>
-                        <rs type="person" ref="#michael-span">Michael Span</rs>
+                        <rs type="person" ref="#span_michael">Michael Span</rs>
                     </name>
                 </respStmt>
                 <respStmt>
                     <resp>XML kodiert von</resp>
                     <name>
-                        <rs type="person" ref="#peter-andorfer">Peter Andorfer</rs>
+                        <rs type="person" ref="#andorfer_peter">Peter Andorfer</rs>
                     </name>
                 </respStmt>
                 <funder>

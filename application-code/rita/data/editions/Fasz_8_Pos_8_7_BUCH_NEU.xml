@@ -3,18 +3,18 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Inventar d. tot. u. lebend. Fahrnisse von <rs type="person" ref="#thomas-griesser-grießer">Thomas Griesser [Grießer]</rs> aus <rs type="place" ref="#kirchbrücke-telfes">Kirchbrücke (Telfes)</rs>, erstellt <date when-iso="1787-04-30">1787-04-30</date>
+                <title>Inventar d. tot. u. lebend. Fahrnisse von <rs type="person" ref="#Griesser [Grießer]_Thomas">Thomas Griesser [Grießer]</rs> aus <rs type="place" ref="#Kirchbrücke (Telfes)">Kirchbrücke (Telfes)</rs>, erstellt <date when-iso="1787-04-30">1787-04-30</date>
                 </title>
                 <respStmt>
                     <resp>Transkribiert von</resp>
                     <name>
-                        <rs type="person" ref="#michael-span">Michael Span</rs>
+                        <rs type="person" ref="#span_michael">Michael Span</rs>
                     </name>
                 </respStmt>
                 <respStmt>
                     <resp>XML kodiert von</resp>
                     <name>
-                        <rs type="person" ref="#peter-andorfer">Peter Andorfer</rs>
+                        <rs type="person" ref="#andorfer_peter">Peter Andorfer</rs>
                     </name>
                 </respStmt>
                 <funder>
@@ -61,7 +61,7 @@
                         <origin>
                             <date when-iso="1787-04-30"/>
                             <origPlace>
-                                <rs type="place" ref="#kirchbrücke-telfes">Kirchbrücke (Telfes)</rs>
+                                <rs type="place" ref="#Kirchbrücke (Telfes)">Kirchbrücke (Telfes)</rs>
                             </origPlace>
                         </origin>
                     </history>

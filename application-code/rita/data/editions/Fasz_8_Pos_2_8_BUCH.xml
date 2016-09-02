@@ -3,18 +3,18 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Inventar d. tot. u. lebend. Fahrnisse von <rs type="person" ref="#thoman-volderauer-ledig">Thoman Volderauer (ledig)</rs> aus <rs type="place" ref="#volderau-neustift">Volderau (Neustift)</rs>, erstellt <date when-iso="1773-06-01">1773-06-01</date>
+                <title>Inventar d. tot. u. lebend. Fahrnisse von <rs type="person" ref="#Volderauer (ledig)_Thoman">Thoman Volderauer (ledig)</rs> aus <rs type="place" ref="#Volderau (Neustift)">Volderau (Neustift)</rs>, erstellt <date when-iso="1773-06-01">1773-06-01</date>
                 </title>
                 <respStmt>
                     <resp>Transkribiert von</resp>
                     <name>
-                        <rs type="person" ref="#michael-span">Michael Span</rs>
+                        <rs type="person" ref="#span_michael">Michael Span</rs>
                     </name>
                 </respStmt>
                 <respStmt>
                     <resp>XML kodiert von</resp>
                     <name>
-                        <rs type="person" ref="#peter-andorfer">Peter Andorfer</rs>
+                        <rs type="person" ref="#andorfer_peter">Peter Andorfer</rs>
                     </name>
                 </respStmt>
                 <funder>
@@ -61,7 +61,7 @@
                         <origin>
                             <date when-iso="1773-06-01"/>
                             <origPlace>
-                                <rs type="place" ref="#volderau-neustift">Volderau (Neustift)</rs>
+                                <rs type="place" ref="#Volderau (Neustift)">Volderau (Neustift)</rs>
                             </origPlace>
                         </origin>
                     </history>

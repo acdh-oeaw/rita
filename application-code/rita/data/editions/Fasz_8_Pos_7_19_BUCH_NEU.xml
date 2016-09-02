@@ -3,18 +3,18 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Verlassenschaftsabhandlung („Inventur Vermögens Ergänzung und Vertrag“) von <rs type="person" ref="#joseph-ranalter">Joseph Ranalter</rs> aus <rs type="place" ref="#gröben-fulpmes">Gröben (Fulpmes)</rs>, erstellt <date when-iso="1783-03-21">1783-03-21</date>
+                <title>Verlassenschaftsabhandlung („Inventur Vermögens Ergänzung und Vertrag“) von <rs type="person" ref="#ranalter_joseph">Joseph Ranalter</rs> aus <rs type="place" ref="#Gröben (Fulpmes)">Gröben (Fulpmes)</rs>, erstellt <date when-iso="1783-03-21">1783-03-21</date>
                 </title>
                 <respStmt>
                     <resp>Transkribiert von</resp>
                     <name>
-                        <rs type="person" ref="#michael-span">Michael Span</rs>
+                        <rs type="person" ref="#span_michael">Michael Span</rs>
                     </name>
                 </respStmt>
                 <respStmt>
                     <resp>XML kodiert von</resp>
                     <name>
-                        <rs type="person" ref="#peter-andorfer">Peter Andorfer</rs>
+                        <rs type="person" ref="#andorfer_peter">Peter Andorfer</rs>
                     </name>
                 </respStmt>
                 <funder>
@@ -61,7 +61,7 @@
                         <origin>
                             <date when-iso="1783-03-21"/>
                             <origPlace>
-                                <rs type="place" ref="#gröben-fulpmes">Gröben (Fulpmes)</rs>
+                                <rs type="place" ref="#Gröben (Fulpmes)">Gröben (Fulpmes)</rs>
                             </origPlace>
                         </origin>
                     </history>

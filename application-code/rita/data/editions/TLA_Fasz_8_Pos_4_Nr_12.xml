@@ -3,18 +3,18 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Bestandskontrakt (Pacht) von <rs type="person" ref="#kinder-des-urban-haas">Kinder des Urban Haas</rs> aus <rs type="place" ref="#starkenhof-kreith">Starkenhof (Kreith?)</rs>, erstellt <date when-iso="1777_04_05">1777_04_05</date>
+                <title>Bestandskontrakt (Pacht) von <rs type="person" ref="#des Urban Haas_Kinder">Kinder des Urban Haas</rs> aus <rs type="place" ref="#Starkenhof (Kreith?)">Starkenhof (Kreith?)</rs>, erstellt <date when-iso="1777_04_05">1777_04_05</date>
                 </title>
                 <respStmt>
                     <resp>Transkribiert von</resp>
                     <name>
-                        <rs type="person" ref="#michael-span">Michael Span</rs>
+                        <rs type="person" ref="#span_michael">Michael Span</rs>
                     </name>
                 </respStmt>
                 <respStmt>
                     <resp>XML kodiert von</resp>
                     <name>
-                        <rs type="person" ref="#peter-andorfer">Peter Andorfer</rs>
+                        <rs type="person" ref="#andorfer_peter">Peter Andorfer</rs>
                     </name>
                 </respStmt>
                 <funder>
@@ -61,7 +61,7 @@
                         <origin>
                             <date when-iso="1777_04_05"/>
                             <origPlace>
-                                <rs type="place" ref="#starkenhof-kreit">Starkenhof (Kreit?)</rs>
+                                <rs type="place" ref="#Starkenhof (Kreit?)">Starkenhof (Kreit?)</rs>
                             </origPlace>
                         </origin>
                     </history>

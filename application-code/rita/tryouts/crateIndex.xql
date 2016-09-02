@@ -59,6 +59,6 @@ return
     $store
 };
 
-let $indexFile := local:createIndex("person", "personlist.xml")
+let $indexFile := local:createIndex("place", "placelist.xml")
 return 
     $indexFile

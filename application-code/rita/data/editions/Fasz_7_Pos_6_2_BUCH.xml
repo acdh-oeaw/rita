@@ -3,18 +3,18 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Verlassenschaftsabhandlung von <rs type="person" ref="#veit-mayr">Veit Mayr</rs> aus <rs type="place" ref="#kreith">Kreith</rs>, erstellt <date when-iso="1764-06-07">1764-06-07</date>
+                <title>Verlassenschaftsabhandlung von <rs type="person" ref="#mayr_veit">Veit Mayr</rs> aus <rs type="place" ref="#kreith">Kreith</rs>, erstellt <date when-iso="1764-06-07">1764-06-07</date>
                 </title>
                 <respStmt>
                     <resp>Transkribiert von</resp>
                     <name>
-                        <rs type="person" ref="#michael-span">Michael Span</rs>
+                        <rs type="person" ref="#span_michael">Michael Span</rs>
                     </name>
                 </respStmt>
                 <respStmt>
                     <resp>XML kodiert von</resp>
                     <name>
-                        <rs type="person" ref="#peter-andorfer">Peter Andorfer</rs>
+                        <rs type="person" ref="#andorfer_peter">Peter Andorfer</rs>
                     </name>
                 </respStmt>
                 <funder>

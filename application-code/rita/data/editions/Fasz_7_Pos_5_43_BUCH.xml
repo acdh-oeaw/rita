@@ -3,18 +3,18 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Inventar d. tot. u. lebend. Fahrnisse von <rs type="person" ref="#elisabeth-lenerin-ehefrau-des-blasi-ferchl">Elisabeth Lenerin (Ehefrau des Blasi Ferchl)</rs> aus <rs type="place" ref="#erlach-neustift">Erlach (Neustift?)</rs>, erstellt <date when-iso="1754-11-17">1754-11-17</date>
+                <title>Inventar d. tot. u. lebend. Fahrnisse von <rs type="person" ref="#Lenerin (Ehefrau des Blasi Ferchl)_Elisabeth">Elisabeth Lenerin (Ehefrau des Blasi Ferchl)</rs> aus <rs type="place" ref="#Erlach (Neustift?)">Erlach (Neustift?)</rs>, erstellt <date when-iso="1754-11-17">1754-11-17</date>
                 </title>
                 <respStmt>
                     <resp>Transkribiert von</resp>
                     <name>
-                        <rs type="person" ref="#michael-span">Michael Span</rs>
+                        <rs type="person" ref="#span_michael">Michael Span</rs>
                     </name>
                 </respStmt>
                 <respStmt>
                     <resp>XML kodiert von</resp>
                     <name>
-                        <rs type="person" ref="#peter-andorfer">Peter Andorfer</rs>
+                        <rs type="person" ref="#andorfer_peter">Peter Andorfer</rs>
                     </name>
                 </respStmt>
                 <funder>
