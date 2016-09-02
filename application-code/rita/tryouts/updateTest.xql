@@ -11,9 +11,8 @@ declare function local:slugify_refs( $arg as xs:string)  as xs:string {
    return $arg
  } ;
 (:update value //fname[. = "Andrew"] with 'Andy':)
-    for $doc in collection('/db/apps/rita/data/editions/')//tei:rs[@type="place"]
+    for $doc in collection('/db/apps/rita/data/editions/')//tei:rs[@type="person"]
     let $value := data($doc)
     let $newValue := concat("#",local:slugify_refs($doc))
     return
         update value $doc/@ref with $newValue
-(:        update value data($doc) with $newValue:)

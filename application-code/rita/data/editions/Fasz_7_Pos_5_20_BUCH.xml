@@ -3,18 +3,18 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Verlassenschaftsabhandlung ("zwischen der Wittib Agnes Pfurtscheller und deren 4 Kindern vorgenommen") von <rs type="person" ref="#wieser_paul">Paul Wieser</rs> aus <rs type="place" ref="#Milders (Neustift)">Milders (Neustift)</rs>, erstellt <date when-iso="1754-05-15">1754-05-15</date>
+                <title>Verlassenschaftsabhandlung ("zwischen der Wittib Agnes Pfurtscheller und deren 4 Kindern vorgenommen") von <rs type="person" ref="#paul-wieser">Paul Wieser</rs> aus <rs type="place" ref="#milders-neustift">Milders (Neustift)</rs>, erstellt <date when-iso="1754-05-15">1754-05-15</date>
                 </title>
                 <respStmt>
                     <resp>Transkribiert von</resp>
                     <name>
-                        <rs type="person" ref="#span_michael">Michael Span</rs>
+                        <rs type="person" ref="#michael-span">Michael Span</rs>
                     </name>
                 </respStmt>
                 <respStmt>
                     <resp>XML kodiert von</resp>
                     <name>
-                        <rs type="person" ref="#andorfer_peter">Peter Andorfer</rs>
+                        <rs type="person" ref="#peter-andorfer">Peter Andorfer</rs>
                     </name>
                 </respStmt>
                 <funder>
@@ -61,7 +61,7 @@
                         <origin>
                             <date when-iso="1754-05-15"/>
                             <origPlace>
-                                <rs type="place" ref="#Milders (Neustift)">Milders (Neustift)</rs>
+                                <rs type="place" ref="#milders-neustift">Milders (Neustift)</rs>
                             </origPlace>
                         </origin>
                     </history>

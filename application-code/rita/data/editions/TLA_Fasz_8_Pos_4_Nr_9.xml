@@ -3,18 +3,18 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Inventar d. tot. u. lebend. Fahrnisse von <rs type="person" ref="#hofer_georg">Georg Hofer</rs> aus <rs type="place" ref="#Rain (Neustift)">Rain (Neustift)</rs>, erstellt <date when-iso="1777-03-03">1777-03-03</date>
+                <title>Inventar d. tot. u. lebend. Fahrnisse von <rs type="person" ref="#georg-hofer">Georg Hofer</rs> aus <rs type="place" ref="#rain-neustift">Rain (Neustift)</rs>, erstellt <date when-iso="1777-03-03">1777-03-03</date>
                 </title>
                 <respStmt>
                     <resp>Transkribiert von</resp>
                     <name>
-                        <rs type="person" ref="#span_michael">Michael Span</rs>
+                        <rs type="person" ref="#michael-span">Michael Span</rs>
                     </name>
                 </respStmt>
                 <respStmt>
                     <resp>XML kodiert von</resp>
                     <name>
-                        <rs type="person" ref="#andorfer_peter">Peter Andorfer</rs>
+                        <rs type="person" ref="#peter-andorfer">Peter Andorfer</rs>
                     </name>
                 </respStmt>
                 <funder>
@@ -61,7 +61,7 @@
                         <origin>
                             <date when-iso="1777-03-03"/>
                             <origPlace>
-                                <rs type="place" ref="#Rain (Neustift)">Rain (Neustift)</rs>
+                                <rs type="place" ref="#rain-neustift">Rain (Neustift)</rs>
                             </origPlace>
                         </origin>
                     </history>

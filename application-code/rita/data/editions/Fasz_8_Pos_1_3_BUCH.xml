@@ -3,18 +3,18 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Verlassenschaftsabhandlung (Vermögensergänzung und Genussvertrag) von <rs type="person" ref="#Mathias Rott_(Herr)">(Herr) Mathias Rott</rs> aus <rs type="place" ref="#Schönberg">Schönberg</rs>, erstellt <date when-iso="1770-05-29/30/31">1770-05-29/30/31</date>
+                <title>Verlassenschaftsabhandlung (Vermögensergänzung und Genussvertrag) von <rs type="person" ref="#herr-mathias-rott">(Herr) Mathias Rott</rs> aus <rs type="place" ref="#schönberg">Schönberg</rs>, erstellt <date when-iso="1770-05-29/30/31">1770-05-29/30/31</date>
                 </title>
                 <respStmt>
                     <resp>Transkribiert von</resp>
                     <name>
-                        <rs type="person" ref="#span_michael">Michael Span</rs>
+                        <rs type="person" ref="#michael-span">Michael Span</rs>
                     </name>
                 </respStmt>
                 <respStmt>
                     <resp>XML kodiert von</resp>
                     <name>
-                        <rs type="person" ref="#andorfer_peter">Peter Andorfer</rs>
+                        <rs type="person" ref="#peter-andorfer">Peter Andorfer</rs>
                     </name>
                 </respStmt>
                 <funder>
@@ -61,7 +61,7 @@
                         <origin>
                             <date when-iso="1770-05-29/30/31"/>
                             <origPlace>
-                                <rs type="place" ref="#Schönberg">Schönberg</rs>
+                                <rs type="place" ref="#schönberg">Schönberg</rs>
                             </origPlace>
                         </origin>
                     </history>

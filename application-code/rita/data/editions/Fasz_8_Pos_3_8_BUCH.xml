@@ -3,18 +3,18 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Inventar d. tot. u. lebend. Fahrnisse von <rs type="person" ref="#Teniflin (ledig) [Denifl]_Maria">Maria Teniflin (ledig) [Denifl]</rs> aus <rs type="place" ref="#telfes">Telfes</rs>, erstellt <date when-iso="1776-05-04">1776-05-04</date>
+                <title>Inventar d. tot. u. lebend. Fahrnisse von <rs type="person" ref="#maria-teniflin-ledig-denifl">Maria Teniflin (ledig) [Denifl]</rs> aus <rs type="place" ref="#telfes">Telfes</rs>, erstellt <date when-iso="1776-05-04">1776-05-04</date>
                 </title>
                 <respStmt>
                     <resp>Transkribiert von</resp>
                     <name>
-                        <rs type="person" ref="#span_michael">Michael Span</rs>
+                        <rs type="person" ref="#michael-span">Michael Span</rs>
                     </name>
                 </respStmt>
                 <respStmt>
                     <resp>XML kodiert von</resp>
                     <name>
-                        <rs type="person" ref="#andorfer_peter">Peter Andorfer</rs>
+                        <rs type="person" ref="#peter-andorfer">Peter Andorfer</rs>
                     </name>
                 </respStmt>
                 <funder>

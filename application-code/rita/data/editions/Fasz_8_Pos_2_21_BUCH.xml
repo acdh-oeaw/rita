@@ -3,18 +3,18 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Inventar d. tot. u. lebend. Fahrnisse von <rs type="person" ref="#Hoferin (Ehefrau des Bartlme Jäger)_Katharina">Katharina Hoferin (Ehefrau des Bartlme Jäger)</rs> aus <rs type="place" ref="#Medraz (Fulpmes)">Medraz (Fulpmes)</rs>, erstellt <date when-iso="1773-_-_">1773-_-_</date>
+                <title>Inventar d. tot. u. lebend. Fahrnisse von <rs type="person" ref="#katharina-hoferin-ehefrau-des-bartlme-jäger">Katharina Hoferin (Ehefrau des Bartlme Jäger)</rs> aus <rs type="place" ref="#medraz-fulpmes">Medraz (Fulpmes)</rs>, erstellt <date when-iso="1773-_-_">1773-_-_</date>
                 </title>
                 <respStmt>
                     <resp>Transkribiert von</resp>
                     <name>
-                        <rs type="person" ref="#span_michael">Michael Span</rs>
+                        <rs type="person" ref="#michael-span">Michael Span</rs>
                     </name>
                 </respStmt>
                 <respStmt>
                     <resp>XML kodiert von</resp>
                     <name>
-                        <rs type="person" ref="#andorfer_peter">Peter Andorfer</rs>
+                        <rs type="person" ref="#peter-andorfer">Peter Andorfer</rs>
                     </name>
                 </respStmt>
                 <funder>
@@ -61,7 +61,7 @@
                         <origin>
                             <date when-iso="1773-_-_"/>
                             <origPlace>
-                                <rs type="place" ref="#Medraz (Fulpmes)">Medraz (Fulpmes)</rs>
+                                <rs type="place" ref="#medraz-fulpmes">Medraz (Fulpmes)</rs>
                             </origPlace>
                         </origin>
                     </history>

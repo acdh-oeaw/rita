@@ -3,18 +3,18 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Inventar d. tot. u. lebend. Fahrnisse („zur Formierung der bevorstehenden Erhausungs Liquidation“) von <rs type="person" ref="#Hoferin (Ehefrau des „Hr.“ Pongratz Volderauer)_Maria">Maria Hoferin (Ehefrau des „Hr.“ Pongratz Volderauer)</rs> aus <rs type="place" ref="#telfes">Telfes</rs>, erstellt <date when-iso="1779-05-27/28/29">1779-05-27/28/29</date>
+                <title>Inventar d. tot. u. lebend. Fahrnisse („zur Formierung der bevorstehenden Erhausungs Liquidation“) von <rs type="person" ref="#maria-hoferin-ehefrau-des-hr-pongratz-volderauer">Maria Hoferin (Ehefrau des „Hr.“ Pongratz Volderauer)</rs> aus <rs type="place" ref="#telfes">Telfes</rs>, erstellt <date when-iso="1779-05-27/28/29">1779-05-27/28/29</date>
                 </title>
                 <respStmt>
                     <resp>Transkribiert von</resp>
                     <name>
-                        <rs type="person" ref="#span_michael">Michael Span</rs>
+                        <rs type="person" ref="#michael-span">Michael Span</rs>
                     </name>
                 </respStmt>
                 <respStmt>
                     <resp>XML kodiert von</resp>
                     <name>
-                        <rs type="person" ref="#andorfer_peter">Peter Andorfer</rs>
+                        <rs type="person" ref="#peter-andorfer">Peter Andorfer</rs>
                     </name>
                 </respStmt>
                 <funder>
