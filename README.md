@@ -1,7 +1,7 @@
 Reading in the Alps
 ====
 
-This is the reposity of the Project 'Reading in the Alps', a digital editions project about inventories collected, sighted, transcribed and described by Michal Span (University of Innsbruck). 
+This is the reposity of the Project 'Reading in the Alps', a digital editions project about inventories collected, sighted, transcribed and described by Michal Span (University of Innsbruck) . 
 
 The repository contains
 ---
