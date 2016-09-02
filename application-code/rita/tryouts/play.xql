@@ -27,10 +27,13 @@ declare function local:slugify_refs( $arg as xs:string)  as xs:string {
    return $arg
  } ;
 
+let $arg := "person"
+ let $element := element{$arg}{"hans"}
 let $indexFile := 
     <listPerson>{
         for $doc in collection('/db/apps/rita/data/editions/')//tei:rs[@type="person"]
         let $id := local:slugify_refs(data($doc/@ref))
+       
         return 
            <person xml:id="{$id}">
                 <persName>{replace($doc, '#', '')}</persName>
@@ -38,6 +41,6 @@ let $indexFile :=
     }</listPerson>
 
 let $newIndex := <listPerson>{functx:distinct-deep($indexFile//person)}</listPerson>
-let $store := xmldb:store('/db/apps/rita/data/indices/', 'xcv.xml', $newIndex)
+(:let $store := xmldb:store('/db/apps/rita/data/indices/', 'xcv.xml', $newIndex):)
 return 
-    $store
+    $element

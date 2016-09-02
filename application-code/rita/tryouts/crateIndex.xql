@@ -27,6 +27,7 @@ declare function local:slugify_refs( $arg as xs:string)  as xs:string {
  } ;
 
 declare function local:createIndex($type as xs:string, $filename as xs:string) as xs:string {
+if($type = "person") then
 let $indexFile := 
     <listPerson>{
         for $doc in collection('/db/apps/rita/data/editions/')//tei:rs[@type=$type]
@@ -37,12 +38,27 @@ let $indexFile :=
             </person>
     }</listPerson>
 
-let $newIndex := <listPerson>{functx:distinct-deep($indexFile//person)}</listPerson>
+let $newIndex := <listPerson>{functx:distinct-deep($indexFile//*[name()=$type])}</listPerson>
+let $store := xmldb:store('/db/apps/rita/data/indices/', $filename, $newIndex)
+return 
+    $store
+else
+    let $indexFile := 
+    <listPlace>{
+        for $doc in collection('/db/apps/rita/data/editions/')//tei:rs[@type=$type]
+        let $id := local:slugify_refs(data($doc/@ref))
+        return 
+            <place xml:id="{$id}">
+                <placeName>{replace($doc, '#', '')}</placeName>
+            </place>
+    }</listPlace>
+
+let $newIndex := <listPlace>{functx:distinct-deep($indexFile//*[name()=$type])}</listPlace>
 let $store := xmldb:store('/db/apps/rita/data/indices/', $filename, $newIndex)
 return 
     $store
 };
 
-let $indexFile := local:createIndex("person", "persList.xml")
+let $indexFile := local:createIndex("person", "personlist.xml")
 return 
     $indexFile

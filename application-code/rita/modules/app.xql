@@ -91,11 +91,11 @@ declare function app:listPers_hits($node as node(), $model as map(*), $searchkey
  };
  
  (:~
- : creates a basic index of persons derived from the document stored in '/data/indieces/listPers.xml'
+ : creates a basic index of persons derived from the document stored in '/data/indieces/personlist.xml'
  :)
 declare function app:listPers($node as node(), $model as map(*)) {
     let $hitHtml := "hits.html?searchkey="
-    for $person in doc(concat($config:app-root, '/data/indices/listPers.xml'))//tei:listPerson/tei:person
+    for $person in doc(concat($config:app-root, '/data/indices/personlist.xml'))//tei:listPerson/tei:person
         return
         <li><a href="{concat($hitHtml,data($person/@xml:id))}">{$person/tei:persName}</a></li>
 };
