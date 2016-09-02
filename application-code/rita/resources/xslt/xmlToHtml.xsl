@@ -65,14 +65,20 @@
                                     </td>
                                 </tr>
                             </xsl:if>
-                            <tr>
-                                <th>
-                                    <abbr title="//tei:titleStmt/tei:respStmt">responsible</abbr>
-                                </th>
-                                <td>
-                                    <xsl:apply-templates select="//tei:titleStmt/tei:respStmt"/>
-                                </td>
-                            </tr>
+                            <xsl:if test="//tei:titleStmt/tei:respStmt">
+                                <tr>
+                                    <th>
+                                        <abbr title="//tei:titleStmt/tei:respStmt">responsible</abbr>
+                                    </th>
+                                    <td>
+                                        <xsl:for-each select="//tei:titleStmt/tei:respStmt">
+                                            <p>
+                                                <xsl:apply-templates/>
+                                            </p>
+                                        </xsl:for-each>
+                                    </td>
+                                </tr>
+                            </xsl:if>
                             <tr>
                                 <th>
                                     <abbr title="//tei:availability//tei:p[1]">License</abbr>
@@ -169,7 +175,32 @@
     #####################
     ###  Formatierung ###
     #####################
---><!-- additions -->
+--><!-- resp -->
+    <xsl:template match="tei:respStmt/tei:resp">
+        <xsl:apply-templates/>&#160;
+    </xsl:template>
+    <xsl:template match="tei:respStmt/tei:name">
+        <xsl:for-each select=".">
+            <li>
+                <xsl:apply-templates/>
+            </li>
+        </xsl:for-each>
+    </xsl:template><!-- reference strings   -->
+    <xsl:template match="tei:rs[@ref or @key]">
+        <strong>
+            <xsl:element name="a">
+                <xsl:attribute name="class">reference</xsl:attribute>
+                <xsl:attribute name="data-type">
+                    <xsl:value-of select="concat('list', data(@type), '.xml')"/>
+                </xsl:attribute>
+                <xsl:attribute name="data-key">
+                    <xsl:value-of select="substring-after(data(@ref), '#')"/>
+                    <xsl:value-of select="@key"/>
+                </xsl:attribute>
+                <xsl:value-of select="."/>
+            </xsl:element>
+        </strong>
+    </xsl:template><!-- additions -->
     <xsl:template match="tei:add">
         <xsl:element name="span">
             <xsl:attribute name="style">
