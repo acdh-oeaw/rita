@@ -25,6 +25,24 @@ declare function app:test($node as node(), $model as map(*)) {
         function was triggered by the data-template attribute <code>data-template="app:test"</code>.</p>
 };
 
+declare function app:list-all-books ($node as node(), $model as map (*), $query as xs:string?) {
+for $bookrow in collection(concat($config:app-root, '/data/editions/'))//tei:bibl[string-length(./text()) gt 8]
+let $doc := document-uri(root($bookrow))
+let $id := data($bookrow/ancestor::tei:TEI/@xml:id)
+let $header := $bookrow/ancestor::tei:TEI//tei:teiHeader
+let $idno := $header//tei:msIdentifier//tei:idno
+let $bestand := $header//tei:msIdentifier//tei:collection
+
+order by $doc
+return
+    <tr>
+        <td>{$bookrow}</td>
+        <td>
+            <a href="{app:hrefToDoc(root($bookrow))}">{for $x in $bestand return concat($x, " ")}{$idno}</a></td>
+    </tr>
+};
+
+
 declare function app:number-of-all-inventories ($node as node(), $model as map (*), $query as xs:string?) {
 let $allrows: = count(doc(concat($config:app-root, '/data/other/summary.xml'))//tei:row[position() gt 1])
 let $rows := count(doc(concat($config:app-root, '/data/other/summary.xml'))//tei:row[position() gt 1 and contains(./tei:cell[3],'fehlt')])
@@ -37,7 +55,7 @@ for $row in doc(concat($config:app-root, '/data/other/summary.xml'))//tei:row[po
         <tr>
             <td>
             {if(contains($row//tei:cell[11],"j")) 
-                then <strong>{$row//tei:cell[1]}</strong> 
+                then <strong><a href="toc.html">{$row//tei:cell[1]}</a></strong> 
                 else $row//tei:cell[1]}
             </td>
             <td>{$row//tei:cell[2]}</td>
