@@ -146,6 +146,16 @@ declare function app:listPers($node as node(), $model as map(*)) {
         <li><a href="{concat($hitHtml,data($person/@xml:id))}">{$person/tei:persName}</a></li>
 };
 
+ (:~
+ : creates a basic index of places derived from the document stored in '/data/indieces/placelist.xml'
+ :)
+declare function app:listPlace($node as node(), $model as map(*)) {
+    let $hitHtml := "hits.html?searchkey="
+    for $place in doc(concat($config:app-root, '/data/indices/placelist.xml'))//tei:listPlace/tei:place
+        return
+        <li><a href="{concat($hitHtml,data($place/@xml:id))}">{$place/tei:placeName}</a></li>
+};
+
 (:~
  : creates a basic table of content derived from the documents stored in '/data/editions'
  :)
