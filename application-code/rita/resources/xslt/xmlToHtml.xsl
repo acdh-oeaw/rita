@@ -46,7 +46,7 @@
                                                 <xsl:attribute name="title">
                                                     <xsl:value-of select="name()"/>
                                                 </xsl:attribute>
-                                                <xsl:apply-templates select="."/>
+                                                <xsl:value-of select="."/>
                                             </abbr>
                                             <br/>
                                         </xsl:for-each><!--<xsl:apply-templates select="//tei:msIdentifier"/>-->
