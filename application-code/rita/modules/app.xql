@@ -200,8 +200,10 @@ declare function app:toc($node as node(), $model as map(*)) {
  :)
 declare function app:XMLtoHTML ($node as node(), $model as map (*), $query as xs:string?) {
 let $ref := xs:string(request:get-parameter("document", ""))
-let $xml := doc(replace(concat($config:app-root,"/data/editions/",$ref), '/exist/', '/db/'))
-let $xsl := doc(concat($config:app-root, "/resources/xslt/xmlToHtml.xsl"))
+let $xmlPath := concat(xs:string(request:get-parameter("directory", "editions")), '/')
+let $xml := doc(replace(concat($config:app-root,'/data/', $xmlPath, $ref), '/exist/', '/db/'))
+let $xslPath := concat(xs:string(request:get-parameter("stylesheet", "xmlToHtml")), '.xsl')
+let $xsl := doc(replace(concat($config:app-root,'/resources/xslt/', $xslPath), '/exist/', '/db/'))
 let $params := 
 <parameters>
    {for $p in request:get-parameter-names()
