@@ -154,21 +154,21 @@ declare function app:listPers_hits($node as node(), $model as map(*), $searchkey
  };
  
  (:~
- : creates a basic index of persons derived from the document stored in '/data/indieces/personlist.xml'
+ : creates a basic index of persons derived from the document stored in '/data/indieces/listperson.xml'
  :)
 declare function app:listPers($node as node(), $model as map(*)) {
     let $hitHtml := "hits.html?searchkey="
-    for $person in doc(concat($config:app-root, '/data/indices/personlist.xml'))//tei:listPerson/tei:person
+    for $person in doc(concat($config:app-root, '/data/indices/listperson.xml'))//tei:listPerson/tei:person
         return
         <li><a href="{concat($hitHtml,data($person/@xml:id))}">{$person/tei:persName}</a></li>
 };
 
  (:~
- : creates a basic index of places derived from the document stored in '/data/indieces/placelist.xml'
+ : creates a basic index of places derived from the document stored in '/data/indieces/listplace.xml'
  :)
 declare function app:listPlace($node as node(), $model as map(*)) {
     let $hitHtml := "hits.html?searchkey="
-    for $place in doc(concat($config:app-root, '/data/indices/placelist.xml'))//tei:listPlace/tei:place
+    for $place in doc(concat($config:app-root, '/data/indices/listplace.xml'))//tei:listPlace/tei:place
         return
         <li><a href="{concat($hitHtml,data($place/@xml:id))}">{$place/tei:placeName}</a></li>
 };
