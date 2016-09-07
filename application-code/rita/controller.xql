@@ -14,13 +14,7 @@ if ($exist:path eq '') then
 else if ($exist:path eq "/") then
     (: forward root path to index.xql :)
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-        <redirect url="index.html"/>
-    </dispatch>
-
-else if (contains($exist:path,"$app-root-href")) then
-    (: forward root path to index.xql :)
-    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-        <redirect url="/exist/apps/{$exist:controller}{substring-after($exist:path, "$app-root-href")}"/>
+        <redirect url="pages/index.html"/>
     </dispatch>
     
 else if (ends-with($exist:resource, ".html")) then
