@@ -142,7 +142,7 @@
                             </xsl:for-each>
                         </xsl:element>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8" id="transcribed_text">
                         <h3>
                             <xsl:apply-templates select="//tei:div[@type='titelblatt']"/>
                         </h3>
@@ -174,7 +174,7 @@
                 var replaced = path.replace("exist/apps/", "exist/rest/db/apps/");
                 current_html = window.location.pathname.substring(window.location.pathname.lastIndexOf("/") + 1)
                 var source_dokument = replaced.replace("pages/"+current_html, "data/editions/"+params['document']);
-                console.log(source_dokument)
+                // console.log(source_dokument)
                 $( "#link_to_source" ).attr('href',source_dokument);
                 $( "#link_to_source" ).text(source_dokument);
             </script>

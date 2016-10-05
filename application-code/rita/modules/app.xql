@@ -113,7 +113,7 @@ let $href := concat('show.html','?document=', app:getDocName($node))
  if (request:get-parameter("searchexpr", "") !="") then
  let $searchterm as xs:string:= request:get-parameter("searchexpr", "")
  for $hit in collection(concat($config:app-root, '/data/editions/'))//*[.//tei:p[ft:query(.,$searchterm)]|.//tei:cell[ft:query(.,$searchterm)]]
-    let $href := app:hrefToDoc($hit)
+    let $href := concat(app:hrefToDoc($hit), "&amp;searchexpr=", $searchterm) 
     let $score as xs:float := ft:score($hit)
     order by $score descending
     return
