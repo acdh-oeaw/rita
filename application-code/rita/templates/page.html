@@ -26,11 +26,8 @@
             <div class="navbar-collapse collapse" id="navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="dropdown" id="about">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Main Menu</a>
                         <ul class="dropdown-menu">
-                            <li>
-                                <a href="index.html">Home</a>
-                            </li>
                             <li>
                                 <a href="toc.html">Table of Content of transcribed inventories</a>
                             </li>
@@ -46,14 +43,18 @@
                             <li>
                                 <a href="places.html">Places</a>
                             </li>
-                            <li>
-                                <a href="ft_search.html">Fulltext Search</a>
-                            </li>
                         </ul>
                     </li>
                 </ul>
                 <div class="pull-right">
-                    <span data-template="app:search-form"/>
+                    <form method="get" action="ft_search.html" class="navbar-form" id="pageform">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="searchexpr" placeholder="search in all inventories"/>
+                            </div>
+                            <button type="submit" class="btn btn-primary">search</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </nav>
@@ -69,7 +70,7 @@
                         </a>
                     </div>
                     <div class="col-sm-4">
-                        <a href="https://github.com/" class="navlink" target="_blank">
+                        <a href="https://github.com/acdh-oeaw/rita" class="navlink" target="_blank">
                             <img src="../resources/img/GitHub-Mark-Light-64px.png" alt="github" width="17%"/>
                         </a>
                     </div>

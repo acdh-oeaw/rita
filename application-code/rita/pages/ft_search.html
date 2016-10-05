@@ -8,18 +8,13 @@
     <script> $(function() { $("table").tablesorter({ theme : "bootstrap", widthFixed: false,
         headerTemplate : '{content} {icon}', widgets : [ "uitheme", "filter", "zebra" ], filter_cssFilter: "form-control", }) }); 
     </script>
-    <div>
-        <form method="get" class="form-inline" id="pageform">
-            <div class="form-group">
-                <div class="input-group">
-                    <input type="text" class="form-control" name="searchexpr"/>
-                </div>
-                <button type="submit" class="btn btn-primary">Go!</button>
-            </div>
-        </form>
-    </div>
+    <h1>
+        <span id="hitcount"/> for <strong>
+            <span id="searchexpr"/>
+        </strong>
+    </h1>
     <hr/>
-    <table>
+    <table id="resultstable">
         <thead>
             <tr>
                 <th>score</th>
@@ -31,4 +26,25 @@
             <tr data-template="app:ft_search"/>
         </tbody>
     </table>
+    <script>
+        $( document ).ready(function() {
+            $.urlParam = function(name){
+                var results = new RegExp('[\?&amp;]' + name + '=([^&amp;]*)').exec(window.location.href);
+                if (results==null){
+                    return null;
+                    }
+                else{
+                    return results[1] || 0;
+                    }
+            }
+            var hits = ($('#resultstable tr').length)-2;
+            if (hits &lt; 2){
+                $("#hitcount").text(hits+" Hit");
+            }
+            else {
+                $("#hitcount").text(hits+" Hits");
+            }
+            $("#searchexpr").text(decodeURIComponent($.urlParam("searchexpr")));
+        });
+    </script>
 </div>

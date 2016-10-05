@@ -24,23 +24,6 @@ declare function app:test($node as node(), $model as map(*)) {
         function was triggered by the data-template attribute <code>data-template="app:test"</code>.</p>
 };
 
-(:~
- : This function returns a search-form sending a get reguest to ft_search.html
-:)
-declare function app:search-form ($node as node(), $model as map (*), $query as xs:string?) {
-    let $path := replace(concat($config:app-root, '/pages/ft_search.html'), 'db', 'exist')
-    let $form := 
-        <form method="get" action="{$path}" class="navbar-form" id="pageform">
-            <div class="form-group">
-                <div class="input-group">
-                    <input type="text" class="form-control" name="searchexpr"/>
-                </div>
-                <button type="submit" class="btn btn-primary">search</button>
-            </div>
-        </form>
-    return
-        $form
-};
 
 declare function app:list-all-books ($node as node(), $model as map (*), $query as xs:string?) {
 for $bookrow in collection(concat($config:app-root, '/data/editions/'))//tei:bibl[string-length(./text()) gt 8]
