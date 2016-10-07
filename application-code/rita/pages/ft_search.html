@@ -37,7 +37,7 @@
                     return results[1] || 0;
                     }
             }
-            var hits = ($('#resultstable tr').length)-2;
+            var hits = ($('td.KWIC').children('p').length);
             if (hits == 1){
                 $("#hitcount").text(hits+" Hit");
             }
