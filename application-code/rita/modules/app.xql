@@ -26,7 +26,7 @@ declare function app:test($node as node(), $model as map(*)) {
 
 
 declare function app:list-all-books ($node as node(), $model as map (*), $query as xs:string?) {
-for $bookrow in collection(concat($config:app-root, '/data/editions/'))//tei:bibl[string-length(./text()) gt 8]
+for $bookrow in collection(concat($config:app-root, '/data/editions/'))//tei:bibl[string-length(string-join(./text(), ' ')) gt 8]
 let $doc := document-uri(root($bookrow))
 let $id := data($bookrow/ancestor::tei:TEI/@xml:id)
 let $header := $bookrow/ancestor::tei:TEI//tei:teiHeader
