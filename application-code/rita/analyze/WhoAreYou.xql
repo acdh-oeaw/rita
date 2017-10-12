@@ -12,7 +12,7 @@ let $RDF :=
 <rdf:RDF
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-    xmlns:acdh="https://vocabs.acdh.oeaw.ac.at/#"
+    xmlns:acdh="https://vocabs.acdh.oeaw.ac.at/schema#"
     xmlns:acdhi="https://id.acdh.oeaw.ac.at/"
     xmlns:foaf="http://xmlns.com/foaf/spec/#"
 
@@ -32,16 +32,23 @@ let $RDF :=
 <!-- define involved Organisations -->
         
         <acdh:Organisation rdf:about="https://www.tirol.gv.at/bildung/tiroler-wissenschaftsfoerderung/">
-            <acdh:hasTitle>Tiroler Wissenschaftsförderung“</acdh:hasTitle>
+            <acdh:hasTitle>Tiroler Wissenschaftsförderung</acdh:hasTitle>
         </acdh:Organisation>
         
 <!-- define involved Project(s) -->        
 
-        <acdh:Project rdf:about="https://id.acdh.oeaw.ac.at/privater-buchbesitz">
+        <acdh:Project rdf:about="https://id.acdh.oeaw.ac.at/project/privater-buchbesitz">
             <acdh:hasTitle>Privater Buchbesitz in Tirol zwischen 1750 und 1850 – Eine Pilotstudie zu den Möglichkeiten und
 Grenzen der systematischen Auswertung von Inventaren am Beispiel der Landgerichte Stubai und
 Steinach.
-</acdh:hasTitle>
+            </acdh:hasTitle>
+            <acdh:language>deu</acdh:language>
+            <acdh:hasContact>
+                <acdh:Person rdf:about="http://d-nb.info/gnd/1133094783"/>
+            </acdh:hasContact>
+            <acdh:hasContact>
+                <acdh:Person rdf:about="http://d-nb.info/gnd/1043833846"/>
+            </acdh:hasContact>
             <acdh:hasDescription>
             Was las die Tiroler Landbevölkerung um 1800? Ziel des Projekts ist die Erforschung des privaten
 Buchbesitzes in Tirol in der sogenannten Sattelzeit, dem Zeitraum von 1750 bis 1850. In den
@@ -72,16 +79,27 @@ Michael Span verantwortlich. Die technische Umsetzung der Online-Lösung obliegt
             <acdh:hasFunder>
                 <acdh:Organisation rdf:about="https://www.tirol.gv.at/bildung/tiroler-wissenschaftsfoerderung/"/>
             </acdh:hasFunder>
+            <acdh:hasRelatedCollection rdf:about="{concat($baseID, $config:app-name)}"/>
         </acdh:Project>
         
 
         <acdh:Collection rdf:about="{concat($baseID, $config:app-name)}">
             <acdh:hasTitle>{$config:app-title}</acdh:hasTitle>
+            <acdh:hasContact>
+                <acdh:Person rdf:about="http://d-nb.info/gnd/1133094783"/>
+            </acdh:hasContact>
+            <acdh:hasContact>
+                <acdh:Person rdf:about="http://d-nb.info/gnd/1043833846"/>
+            </acdh:hasContact>
+            <acdh:hasDepositor>
+                <acdh:Person rdf:about="http://d-nb.info/gnd/1043833846"/>
+            </acdh:hasDepositor>
             <acdh:hasDescription>A collection of XML/TEI transcriptions of inventories</acdh:hasDescription>
             <acdh:hasRelatedProject>
-                <acdh:Project rdf:about="https://id.acdh.oeaw.ac.at/project/lesen-im-alpental"/>
+                <acdh:Project rdf:about="https://id.acdh.oeaw.ac.at/project/privater-buchbesitz"/>
             </acdh:hasRelatedProject>           
         </acdh:Collection>
+
         <acdh:Collection rdf:about="{concat($baseID, string-join(($config:app-name, 'data'), '/'))}">
             <acdh:hasTitle>{string-join(($config:app-name, 'data'), '/')}</acdh:hasTitle>
             <acdh:isPartOf rdf:resource="{concat($baseID,$config:app-name)}"/>
@@ -93,6 +111,12 @@ Michael Span verantwortlich. Die technische Umsetzung der Online-Lösung obliegt
                     <acdh:Collection rdf:about="{concat($baseID,string-join(($config:app-name, 'data', $x), '/'))}">
                         <acdh:hasTitle>{string-join(($config:app-name, 'data', $x), '/')}</acdh:hasTitle>
                         <acdh:isPartOf rdf:resource="{concat($baseID, string-join(($config:app-name, 'data'), '/'))}"/>
+                        <acdh:hasContact>
+                            <acdh:Person rdf:about="http://d-nb.info/gnd/1133094783"/>
+                        </acdh:hasContact>
+                        <acdh:hasContact>
+                            <acdh:Person rdf:about="http://d-nb.info/gnd/1043833846"/>
+                        </acdh:hasContact>
                     </acdh:Collection>
         }
         {
@@ -117,6 +141,7 @@ Michael Span verantwortlich. Die technische Umsetzung der Online-Lösung obliegt
                         {$title}
                         <acdh:hasCreator rdf:resource='http://d-nb.info/gnd/1133094783'/>
                         <acdh:hasContributor rdf:resource='http://d-nb.info/gnd/1043833846'/>
+                        <acdh:hasDepositor rdf:resource='http://d-nb.info/gnd/1043833846'/>
                             
                         <acdh:isPartOf rdf:resource="{concat($baseID, (string-join(($config:app-name, 'data', $x), '/')))}"/>
                         
