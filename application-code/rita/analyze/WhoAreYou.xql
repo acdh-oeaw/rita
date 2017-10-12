@@ -97,12 +97,14 @@ Michael Span verantwortlich. Die technische Umsetzung der Online-Lösung obliegt
             <acdh:hasDescription>A collection of XML/TEI transcriptions of inventories</acdh:hasDescription>
             <acdh:hasRelatedProject>
                 <acdh:Project rdf:about="https://id.acdh.oeaw.ac.at/project/privater-buchbesitz"/>
-            </acdh:hasRelatedProject>           
+            </acdh:hasRelatedProject>          
+            <acdh:hasLicense rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/>
         </acdh:Collection>
 
         <acdh:Collection rdf:about="{concat($baseID, string-join(($config:app-name, 'data'), '/'))}">
             <acdh:hasTitle>{string-join(($config:app-name, 'data'), '/')}</acdh:hasTitle>
             <acdh:isPartOf rdf:resource="{concat($baseID,$config:app-name)}"/>
+            <acdh:hasLicense rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/>
         </acdh:Collection>
 
         {
@@ -117,6 +119,7 @@ Michael Span verantwortlich. Die technische Umsetzung der Online-Lösung obliegt
                         <acdh:hasContact>
                             <acdh:Person rdf:about="http://d-nb.info/gnd/1043833846"/>
                         </acdh:hasContact>
+                        <acdh:hasLicense rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/>
                     </acdh:Collection>
         }
         {
@@ -142,7 +145,7 @@ Michael Span verantwortlich. Die technische Umsetzung der Online-Lösung obliegt
                         <acdh:hasCreator rdf:resource='http://d-nb.info/gnd/1133094783'/>
                         <acdh:hasContributor rdf:resource='http://d-nb.info/gnd/1043833846'/>
                         <acdh:hasDepositor rdf:resource='http://d-nb.info/gnd/1043833846'/>
-                            
+                        <acdh:hasLicense rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/>    
                         <acdh:isPartOf rdf:resource="{concat($baseID, (string-join(($config:app-name, 'data', $x), '/')))}"/>
                         
                     </acdh:Resource>
