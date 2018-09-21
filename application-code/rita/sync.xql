@@ -5,16 +5,15 @@ declare namespace repo="http://exist-db.org/xquery/repo";
 
 import module namespace config="http://www.digital-archiv.at/ns/rita/config" at "modules/config.xqm";
 
-let $target-base-default := "C:/Users/pandorfer/ownCloud/GIT/Redmine/"
+let $target-base-default := "C:\Users\pandorfer\Documents\Redmine\rita\application-code"
 let $app-name := doc(concat($config:app-root, "/repo.xml"))//repo:target/text()
-let $output := "C:\Users\pandorfer\ownCloud\GIT\Redmine\rita\application-code\rita"
 return 
 
 <response>{
 try{
     let $source  := request:get-parameter("source",$config:app-root)
     let $target-base := request:get-parameter("target-base",$target-base-default)
-    let $synced-files :=  file:sync($source, $output, ()) 
+    let $synced-files :=  file:sync($source, $target-base||"/"||$app-name, ()) 
     return $synced-files
     
 } catch * {

@@ -15,7 +15,6 @@ let $RDF :=
     xmlns:acdh="https://vocabs.acdh.oeaw.ac.at/schema#"
     xmlns:acdhi="https://id.acdh.oeaw.ac.at/"
     xmlns:foaf="http://xmlns.com/foaf/spec/#"
-
     xml:base="https://id.acdh.oeaw.ac.at/">
     
 <!-- define involved Persons -->
@@ -42,6 +41,7 @@ let $RDF :=
 Grenzen der systematischen Auswertung von Inventaren am Beispiel der Landgerichte Stubai und
 Steinach.
             </acdh:hasTitle>
+            <acdh:hasUrl>https://rita.acdh.oeaw.ac.at/pages/index.html</acdh:hasUrl>
             <acdh:language>deu</acdh:language>
             <acdh:hasContact>
                 <acdh:Person rdf:about="http://d-nb.info/gnd/1133094783"/>
@@ -136,7 +136,11 @@ Michael Span verantwortlich. Die technische Umsetzung der Online-Lösung obliegt
                     } catch * {
                         <acdh:hasTitle>{tokenize($filename, '/')[last()]}</acdh:hasTitle>
                     }
-
+                
+                let $idno := try {
+                    $node//tei:publicationStmt/tei:idno/text()
+                } catch * {()}
+                let $pid := if ($idno) then $idno else 'create some'
                 
                 let $filename := string-join(($config:app-name, 'data', $x, $doc), '/')
                 return
@@ -145,9 +149,9 @@ Michael Span verantwortlich. Die technische Umsetzung der Online-Lösung obliegt
                         <acdh:hasCreator rdf:resource='http://d-nb.info/gnd/1133094783'/>
                         <acdh:hasContributor rdf:resource='http://d-nb.info/gnd/1043833846'/>
                         <acdh:hasDepositor rdf:resource='http://d-nb.info/gnd/1043833846'/>
-                        <acdh:hasLicense rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/>    
+                        <acdh:hasLicense rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/>
+                        <acdh:hasPid>{$pid}</acdh:hasPid>
                         <acdh:isPartOf rdf:resource="{concat($baseID, (string-join(($config:app-name, 'data', $x), '/')))}"/>
-                        
                     </acdh:Resource>
         }
 
